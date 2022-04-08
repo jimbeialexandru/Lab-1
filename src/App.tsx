@@ -1,15 +1,31 @@
+
 import React from 'react';
-// import logo from './logo.svg';
 import './App.css';
-import 'antd/dist/antd.css';
+import Layout_content from "./components/Layout"
+import {StudenOverview} from "./components/Overview"
 
 
-import { LayoutCos } from './Layouts/LayoutCos'
+const infoStudent = [
+
+  {
+    firstName: "Jimbei",
+    secondName:"Alexandru",
+    gender:"male",
+    age:22,
+    height:180,
+    univerity: "UTM",
+    speciality:"RM",
+  }
+]
 
 function App() {
   return (
-    <div>
-      <LayoutCos />
+    <div className="App">
+        <Layout_content
+        />
+        <StudenOverview 
+        students = {infoStudent}
+        />
     </div>
   );
 }
