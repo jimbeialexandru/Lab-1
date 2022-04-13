@@ -1,14 +1,15 @@
 import {Layout} from "antd";
 import React from "react";
 import Student from "../interface/secondInterface"
+import type { IStudent } from "../mst/Student.model";
 import StudentContent from "./Content"
 
 const { Content } = Layout;
 export interface StudentProps{
-    students: Student[];
+    students: IStudent[];
 }
 
-export const StudenOverview = ({students}:StudentProps) => {
+export const Overview = ({students}:StudentProps) => {
         return(
             <Layout>
               <Content style={{ padding: '0 50px' }}>
