@@ -54,22 +54,46 @@ const initialState = {
     persons: [
         {
             id: 'p-001',
-            firstName: "Petru",
-            secondName:"Cristea",
+            firstName: "Jimbei",
+            secondName:"Alexandru",
             gender:"male",
-            age:21,
-            height:200
+            age:22,
+            height:180
         },
         {
             id: 'p-002',
-            firstName: "Rusnac",
-            secondName:"Sandu",
+            firstName: "Jimbei",
+            secondName:"Alexandru",
             gender:"male",
-            age:13,
-            height:30
+            age:22,
+            height:180
         },
         {
             id: 'p-003',
+            firstName: "Jimbei",
+            secondName:"Alexandru",
+            gender:"male",
+            age:22,
+            height:180
+        },
+        {
+            id: 'p-004',
+            firstName: "Jimbei",
+            secondName:"Alexandru",
+            gender:"male",
+            age:22,
+            height:180
+        },
+        {
+            id: 'p-005',
+            firstName: "Jimbei",
+            secondName:"Alexandru",
+            gender:"male",
+            age:22,
+            height:180
+        },
+        {
+            id: 'p-006',
             firstName: "Jimbei",
             secondName:"Alexandru",
             gender:"male",
@@ -87,11 +111,29 @@ const initialState = {
     {
         id: 'st-002',
         personId: 'p-002',
-        university: "Hogwarts",
-        speciality:"Slytherin"
+        university: "UTM",
+        speciality:"RM"
     },
     {
         id: 'st-003',
+        personId: 'p-003',
+        university: "UTM",
+        speciality:"RM"
+    },
+    {
+        id: 'st-004',
+        personId: 'p-003',
+        university: "UTM",
+        speciality:"RM"
+    },
+    {
+        id: 'st-005',
+        personId: 'p-003',
+        university: "UTM",
+        speciality:"RM"
+    },
+    {
+        id: 'st-006',
         personId: 'p-003',
         university: "UTM",
         speciality:"RM"
@@ -99,28 +141,3 @@ const initialState = {
     ]
 }
 export default rootStore
-//   if (process.browser) {
-    // const data = localStorage.getItem("rootState");
-    // if (data) {
-    //     const json = JSON.parse(data);
-    //     if (Root.create(json)) {
-    //         initialState = Root.create(json);
-    //     }
-    // }
-//   }
-//   onSnapshot(rootStore, (snapshot) => {
-//     console.log("Snapshot: ", snapshot);
-//     localStorage.setItem("rootState", JSON.stringify(snapshot));
-//   });
-
-// export type RootInstance = Instance<typeof Root>;
-// const RootStoreContext = createContext<null | RootInstance>(null);
-// export const Provider = RootStoreContext.Provider;
-// export function useMst() {
-//     const store = useContext(RootStoreContext);
-//     if (store === null) {
-//         throw new Error("Store cannot be null, please add a context provider");
-//     }
-//     console.log(store)
-//     return store;
-// }
