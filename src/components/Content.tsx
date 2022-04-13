@@ -38,16 +38,30 @@ const StudentContent = ({students}: StudentProps) => {
                             </tr>
                     
                             {students.map(item => {
+                                // return (
+                                //     <StudentItem key={item.id} firstName = {item.personData.firstName}
+                                //     secondName = {item.personData.secondName}
+                                //     age = {item.personData.age}
+                                //     gender = {item.personData.gender}
+                                //     height = {item.personData.height}
+                                //     university = {item.university}  
+                                //     speciality = {item.speciality}
+                                //     >
+                                //     </StudentItem>
+                                // )
                                 return (
-                                    <StudentItem firstName = {item.firstName}
-                                    secondName = {item.secondName}
-                                    age = {item.age}
-                                    gender = {item.gender}
-                                    height = {item.height}
-                                    univerity = {item.univerity}  
+                                    <>
+                                    <button key={item.id} onClick={()=>{item.updateField('university', 'ASEM'); console.log(item)}}>set university to ASEM</button>
+                                    <StudentItem key={item.id} firstName = {item.personData.firstName}
+                                    secondName = {item.personData.secondName}
+                                    age = {item.personData.age}
+                                    gender = {item.personData.gender}
+                                    height = {item.personData.height}
+                                    university = {item.university}  
                                     speciality = {item.speciality}
                                     >
                                     </StudentItem>
+                                    </>
                                 )
                             })}
                         </tbody>
@@ -59,7 +73,7 @@ const StudentContent = ({students}: StudentProps) => {
 }
 
 
-const StudentItem: React.FC<Student> = ({firstName, secondName, age, height, univerity, speciality,gender }: Student)=> {
+const StudentItem: React.FC<Student> = ({firstName, secondName, age, height, university, speciality,gender }: Student)=> {
     return<tr>
    <td>
        <h4>{firstName}</h4>
@@ -77,7 +91,7 @@ const StudentItem: React.FC<Student> = ({firstName, secondName, age, height, uni
        <h4>{height}</h4>
    </td>
    <td>
-       <h4>{univerity}</h4>
+       <h4>{university}</h4>
    </td>
    <td>
        <h4>{speciality}</h4>

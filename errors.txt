@@ -1,1 +1,0 @@
-Here will be stored my error, only for me so i must make git ignore this file.

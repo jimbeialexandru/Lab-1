@@ -1,7 +1,7 @@
 import Person from "./firstInterface"
 
 interface Student extends Person {
-    univerity: string
+    university: string
     speciality: string
 }
 
