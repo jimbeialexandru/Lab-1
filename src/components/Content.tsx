@@ -8,7 +8,7 @@ const { Content } = Layout;
 const StudentContent = ({students}: StudentProps) => {
 
     return (
-        <Content style={{ padding: '0 24px', display:"flex" , minHeight: 280 }}>
+        <Content style={{ padding: '0 20px', display:"flex" , minHeight: 120 }}>
                 <div className=" ">
                     <table>
                         <tbody>
@@ -38,20 +38,11 @@ const StudentContent = ({students}: StudentProps) => {
                             </tr>
                     
                             {students.map(item => {
-                                // return (
-                                //     <StudentItem key={item.id} firstName = {item.personData.firstName}
-                                //     secondName = {item.personData.secondName}
-                                //     age = {item.personData.age}
-                                //     gender = {item.personData.gender}
-                                //     height = {item.personData.height}
-                                //     university = {item.university}  
-                                //     speciality = {item.speciality}
-                                //     >
-                                //     </StudentItem>
-                                // )
                                 return (
                                     <>
-                                    <button key={item.id} onClick={()=>{item.updateField('university', 'ASEM'); console.log(item)}}>set university to ASEM</button>
+                                    <button key={item.id} onClick={()=>{item.updateField('university', 'USM'); console.log(item)}}>Set university to USM</button>
+                                    <button key={item.id} onClick={()=>{item.updateField('university', 'ASEM'); console.log(item)}}>Set university to ASEM</button>
+                                    <button key={item.id} onClick={()=>{item.updateField('university', 'TUM'); console.log(item)}}>Set university to  TUM</button>
                                     <StudentItem key={item.id} firstName = {item.personData.firstName}
                                     secondName = {item.personData.secondName}
                                     age = {item.personData.age}

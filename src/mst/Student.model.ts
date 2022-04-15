@@ -12,7 +12,8 @@ const Student = types
     .actions((self) =>({
         updateField<Key extends keyof typeof self>(field: Key, value: typeof self[Key]) {
             self[field] = value
-            rootStore.saveToLocalStorage();
+            rootStore.saveToLocalStorage()
+            window.location.reload()
         },
     }))
     .views((self) => ({
