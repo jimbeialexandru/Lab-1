@@ -25,9 +25,8 @@ function App() {
         <br />
         <button onClick={rootStore.clearLocalStorage}>Clear LocalStorage</button>
         <br />
-        <button onClick={rootStore.setLocalStorageTestData}>Set LocalStorage data</button>
-        <br />
-        <button onClick={refreshPage}>Reload</button>
+        <button onClick={rootStore.setLocalStorageTestData}>Set LocalStorage
+        </button>
     </div>
   );
 }

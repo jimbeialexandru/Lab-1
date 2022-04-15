@@ -40,7 +40,9 @@ const StudentContent = ({students}: StudentProps) => {
                             {students.map(item => {
                                 return (
                                     <>
-                                    <button key={item.id} onClick={()=>{item.updateField('university', 'ASEM'); console.log(item)}}>set ASEM</button>
+                                    <button key={item.id} onClick={()=>{item.updateField('university', 'USM'); console.log(item)}}>Set university to USM</button>
+                                    <button key={item.id} onClick={()=>{item.updateField('university', 'ASEM'); console.log(item)}}>Set university to ASEM</button>
+                                    <button key={item.id} onClick={()=>{item.updateField('university', 'TUM'); console.log(item)}}>Set university to  TUM</button>
                                     <StudentItem key={item.id} firstName = {item.personData.firstName}
                                     secondName = {item.personData.secondName}
                                     age = {item.personData.age}

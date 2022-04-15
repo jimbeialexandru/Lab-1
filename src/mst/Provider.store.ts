@@ -23,6 +23,7 @@ export const Root = types
         },
         clearLocalStorage(){
             localStorage && localStorage.setItem('Lab5_Data', JSON.stringify({persons:[], students: []}))
+            window.location.reload()
         },
         setLocalStorageTestData() {
             localStorage && localStorage.setItem('Lab5_Data', JSON.stringify(initialState))
