@@ -1,6 +1,6 @@
 import {Layout} from "antd";
 import React from "react";
-import Student from "../interface/secondInterface"
+// import Student from "../interface/secondInterface"
 import type { IStudent } from "../mst/Student.model";
 import StudentContent from "./Content"
 

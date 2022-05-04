@@ -3,10 +3,21 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from "react-router-dom";
+import { Routes, Route, Link, Router } from "react-router-dom";
+import Nav from './components/Nav'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<App/>}>
+          {[...Array(10)].map((x, i) =>
+            <Route path={"/nav"+(i+1)} element={<Nav num={i+1} />}/>
+          )}
+          </Route>
+        </Routes>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
