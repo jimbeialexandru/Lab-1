@@ -1,6 +1,5 @@
-import { log } from "console";
-import { type Instance, onSnapshot, types } from "mobx-state-tree";
-import { createContext, useContext } from "react";
+
+import { types } from "mobx-state-tree";
 import Person from './Person.model';
 import Student from './Student.model';
 
@@ -23,7 +22,6 @@ export const Root = types
         },
         clearLocalStorage(){
             localStorage && localStorage.setItem('Lab5_Data', JSON.stringify({persons:[], students: []}))
-            window.location.reload()
         },
         setLocalStorageTestData() {
             localStorage && localStorage.setItem('Lab5_Data', JSON.stringify(initialState))
@@ -36,7 +34,7 @@ export const Root = types
             const isLSData = localStorage && localStorage.getItem('Lab5_Data')
             const lsData = isLSData ? JSON.parse(localStorage.getItem('Lab5_Data') || '') : {}
             if(!self.isFetchedWithLocalStorage){
-                if(lsData && lsData.persons && lsData.persons.length == 0 && lsData.students && lsData.students.length == 0) {
+                if(lsData && lsData.persons && lsData.persons.length === 0 && lsData.students && lsData.students.length === 0) {
                     self.saveToLocalStorage()
                 }
                 else {
@@ -55,46 +53,22 @@ const initialState = {
     persons: [
         {
             id: 'p-001',
-            firstName: "Jimbei",
-            secondName:"Alexandru",
+            firstName: "Petru",
+            secondName:"Cristea",
             gender:"male",
-            age:22,
-            height:180
+            age:21,
+            height:200
         },
         {
             id: 'p-002',
-            firstName: "Jimbei",
-            secondName:"Alexandru",
+            firstName: "Rusnac",
+            secondName:"Sandu",
             gender:"male",
-            age:22,
-            height:180
+            age:13,
+            height:30
         },
         {
             id: 'p-003',
-            firstName: "Jimbei",
-            secondName:"Alexandru",
-            gender:"male",
-            age:22,
-            height:180
-        },
-        {
-            id: 'p-004',
-            firstName: "Jimbei",
-            secondName:"Alexandru",
-            gender:"male",
-            age:22,
-            height:180
-        },
-        {
-            id: 'p-005',
-            firstName: "Jimbei",
-            secondName:"Alexandru",
-            gender:"male",
-            age:22,
-            height:180
-        },
-        {
-            id: 'p-006',
             firstName: "Jimbei",
             secondName:"Alexandru",
             gender:"male",
@@ -112,29 +86,11 @@ const initialState = {
     {
         id: 'st-002',
         personId: 'p-002',
-        university: "UTM",
-        speciality:"RM"
+        university: "Hogwarts",
+        speciality:"Slytherin"
     },
     {
         id: 'st-003',
-        personId: 'p-003',
-        university: "UTM",
-        speciality:"RM"
-    },
-    {
-        id: 'st-004',
-        personId: 'p-003',
-        university: "UTM",
-        speciality:"RM"
-    },
-    {
-        id: 'st-005',
-        personId: 'p-003',
-        university: "UTM",
-        speciality:"RM"
-    },
-    {
-        id: 'st-006',
         personId: 'p-003',
         university: "UTM",
         speciality:"RM"
@@ -142,3 +98,28 @@ const initialState = {
     ]
 }
 export default rootStore
+//   if (process.browser) {
+    // const data = localStorage.getItem("rootState");
+    // if (data) {
+    //     const json = JSON.parse(data);
+    //     if (Root.create(json)) {
+    //         initialState = Root.create(json);
+    //     }
+    // }
+//   }
+//   onSnapshot(rootStore, (snapshot) => {
+//     console.log("Snapshot: ", snapshot);
+//     localStorage.setItem("rootState", JSON.stringify(snapshot));
+//   });
+
+// export type RootInstance = Instance<typeof Root>;
+// const RootStoreContext = createContext<null | RootInstance>(null);
+// export const Provider = RootStoreContext.Provider;
+// export function useMst() {
+//     const store = useContext(RootStoreContext);
+//     if (store === null) {
+//         throw new Error("Store cannot be null, please add a context provider");
+//     }
+//     console.log(store)
+//     return store;
+// }
